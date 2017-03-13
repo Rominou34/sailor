@@ -16,7 +16,8 @@ if(isset($_GET['code'])) {
       curl_setopt($ch, CURLOPT_POST, 1);
 
       $content = curl_exec($ch);
-      var_dump($content);
+      $token_infos = json_decode($content);
+      var_dump($token_infos);
 
       if (FALSE === $content)
           throw new Exception(curl_error($ch), curl_errno($ch));
