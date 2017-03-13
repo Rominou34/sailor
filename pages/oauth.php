@@ -17,8 +17,9 @@ if(isset($_GET['code'])) {
 
       $content = curl_exec($ch);
       $token_infos = json_decode($content);
-      echo($token_infos->access_token);
-      echo($token_infos->refresh_token);
+      $_SESSION["access_token"] = $token_infos->access_token;
+      $_SESSION["refresh_token"] = $token_infos->refresh_token;
+      var_dump($token_infos);
 
       if (FALSE === $content)
           throw new Exception(curl_error($ch), curl_errno($ch));
