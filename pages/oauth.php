@@ -14,6 +14,7 @@ if(isset($_GET['code'])) {
       curl_setopt($ch, CURLOPT_URL, $token_url);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($ch, CURLOPT_CAINFO, CA_PATH);
+      curl_setopt($ch, CURLOPT_POST, 1);
 
       $content = curl_exec($ch);
       var_dump($content);
