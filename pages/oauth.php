@@ -11,7 +11,7 @@ if(isset($_GET['code'])) {
           throw new Exception('failed to initialize');
 
       $token_url = "https://cloud.digitalocean.com/v1/oauth/token?grant_type=authorization_code&code=".$code."&client_id=".CLIENT_ID."&client_secret=".CLIENT_SECRET."&redirect_uri=".REDIRECT_URI;
-      curl_setopt($ch, CURLOPT_URL, 'https://romainarnaud.fr');
+      curl_setopt($ch, CURLOPT_URL, $token_url);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($ch, CURLOPT_CAINFO, "cacert.pem");
 
