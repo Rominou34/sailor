@@ -1,8 +1,9 @@
 <?php
+session_start();
 
 if(isset($_GET['code'])) {
   $code = $_GET['code'];
-echo($code);
+
   try {
       $ch = curl_init();
 
@@ -14,7 +15,7 @@ echo($code);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
       $content = curl_exec($ch);
-      echo($content);
+      var_dump($content);
 
       if (FALSE === $content)
           throw new Exception(curl_error($ch), curl_errno($ch));
