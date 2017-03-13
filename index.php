@@ -48,9 +48,12 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
     		case 'login':
     			include('pages/login.php');
     			break;
-          case 'oauth':
-            include('pages/oauth.php');
-            break;
+        case 'oauth':
+          include('pages/oauth.php');
+          break;
+				case 'droplets':
+					include('pages/droplets.php');
+					break;
     		default:
     			die('404 file not found');
       }
