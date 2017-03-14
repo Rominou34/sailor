@@ -47,9 +47,6 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
     		case 'index.php':
     			include('client/homepage.php');
     			break;
-    		case 'login':
-    			include('client/login.php');
-    			break;
         case 'oauth':
           include('client/oauth.php');
           break;
