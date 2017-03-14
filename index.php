@@ -43,16 +43,26 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
     	// '/index.php'
     	switch($route[0]) {
     		case 'index.php':
-    			include('pages/homepage.php');
+    			include('client/homepage.php');
     			break;
     		case 'login':
-    			include('pages/login.php');
+    			include('client/login.php');
     			break;
         case 'oauth':
-          include('pages/oauth.php');
+          include('client/oauth.php');
           break;
 				case 'droplets':
-					include('pages/droplets.php');
+					include('client/droplets.php');
+					break;
+				case 'test':
+					include('server/droplets.php');
+					break;
+				/*
+				* If the url is '/server/*' we redirect directly to the file
+				* It's done like this so the front-end can AJAX to '/server/resource.php'
+				*/
+				case 'server':
+					include('server/'.$route[1]);
 					break;
     		default:
     			die('404 file not found');
