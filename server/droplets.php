@@ -5,6 +5,8 @@
 // Fake data so I don't have to request DO servers everytime
 //echo($droplets);
 
+session_start();
+
 if(isset($_SESSION["access_token"])) {
   try {
     $ch = curl_init();
@@ -30,6 +32,6 @@ if(isset($_SESSION["access_token"])) {
     echo($e->getCode()."<br/>". $e->getMessage());
   }
 } else {
-  header('Location: '.WEBSITE_URL.'/login');
+  echo('You are not logged in');
 }
 ?>
