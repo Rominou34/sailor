@@ -1,9 +1,9 @@
 <?php
 
-//require('data.php');
-
 // Fake data so I don't have to request DO servers everytime
-//echo($droplets);
+// require('data.php');
+// echo($droplets);
+// die();
 
 session_start();
 

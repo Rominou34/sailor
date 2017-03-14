@@ -28,17 +28,34 @@ html, body {
 }
 
 body {
-  padding-left: 240px;
+
 }
 
 main {
   margin: 1em;
-  background-color: #eef;
+  background-color: #f4f6f9;
+  width: auto;
+  max-width: none;
+  padding: 1em;
+}
+
+/*
+*** HEADER ***
+*/
+body > header {
+  font-size: 24px !important;
+  font-family: sans-serif;
+}
+
+#user-info:hover {
+  background-color: #6da5f9;
+  cursor: pointer
 }
 
 /*
 *** NAV ***
 */
+/*
 nav {
   width: 240px;
   background-color: #242424;
@@ -72,17 +89,45 @@ nav a:visited {
 nav a:hover {
   background-color: #484848;
 }
+*/
 
 /*
 *** DROPLETS ***
 */
 .droplet-item {
   background-color: #fff;
-  border: 1px solid #bbb;
+  border: 1px solid #ddd;
   border-left: 4px solid #08d;
   border-radius: 0 4px 4px 0;
-  margin: 0.5em;
-  padding: 1em;
+  margin: 0.5em auto;
+  padding: 0.5em 2em;
+  color: #586977;
+  width: 100%;
+  max-width: 640px;
+  position: relative;
+  display: block;
+}
+
+.droplet-item.active {
+  border-left: 4px solid #23c623;
+}
+
+.droplet-item.off {
+  border-left: 4px solid #c62d23;
+}
+
+.droplet-item.new {
+  border-left: 4px solid #1ea8ff;
+}
+
+.droplet-item.archive {
+  border-left: 4px solid #aabac4;
+}
+
+.droplet-item:hover {
+  top: -1px;
+  box-shadow: 1px 2px 6px 0 #a2a2a2;
+  cursor: pointer;
 }
 
 .droplet-item .name {
@@ -91,5 +136,5 @@ nav a:hover {
 
 .droplet-item .id {
   font-size: 18px;
-  color: #aaa;
+  color: #bac6d1;
 }
