@@ -1,0 +1,95 @@
+/*
+*** INIT ***
+*/
+html, body {
+  width: 100%;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body, p, div, article, h1, h2, h3, h4, h5, h6, form {
+  margin: 0px;
+  padding: 0px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+*** BODY ***
+*/
+
+html, body {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+body {
+  padding-left: 240px;
+}
+
+main {
+  margin: 1em;
+  background-color: #eef;
+}
+
+/*
+*** NAV ***
+*/
+nav {
+  width: 240px;
+  background-color: #242424;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+nav .toggle {
+  display: none;
+}
+
+nav .header {
+  background-color: #08d;
+  text-align: center;
+  padding: 2em;
+}
+
+nav a,
+nav a:visited {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5em;
+  display: block;
+}
+
+nav a:hover {
+  background-color: #484848;
+}
+
+/*
+*** DROPLETS ***
+*/
+.droplet-item {
+  background-color: #fff;
+  border: 1px solid #bbb;
+  border-left: 4px solid #08d;
+  border-radius: 0 4px 4px 0;
+  margin: 0.5em;
+  padding: 1em;
+}
+
+.droplet-item .name {
+  font-size: 24px;
+}
+
+.droplet-item .id {
+  font-size: 18px;
+  color: #aaa;
+}

@@ -23,7 +23,8 @@ if(isset($_GET['code'])) {
       if (FALSE === $content)
           throw new Exception(curl_error($ch), curl_errno($ch));
 
-      // ...process $content now
+      echo($token_infos);
+      //header('Location: '.WEBSITE_URL);
   } catch(Exception $e) {
       echo($e->getCode()."<br/>". $e->getMessage());
       // trigger_error(sprintf(

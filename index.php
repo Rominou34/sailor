@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
 	// '/'
 	switch(count($route)) {
     case 0:
-    	include('pages/homepage.php');
+    	include('client/homepage.php');
     	break;
     // '/*'
     case 1:
