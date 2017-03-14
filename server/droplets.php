@@ -1,11 +1,9 @@
 <?php
 
-require('data.php');
+//require('data.php');
 
 // Fake data so I don't have to request DO servers everytime
 //echo($droplets);
-
-session_start();
 
 if(isset($_SESSION["access_token"])) {
   try {
@@ -31,5 +29,7 @@ if(isset($_SESSION["access_token"])) {
   } catch(Exception $e) {
     echo($e->getCode()."<br/>". $e->getMessage());
   }
+} else {
+  header('Location: '.WEBSITE_URL.'/login');
 }
 ?>
