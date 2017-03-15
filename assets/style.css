@@ -99,13 +99,25 @@ nav a:hover {
   border: 1px solid #ddd;
   border-left: 4px solid #08d;
   border-radius: 0 4px 4px 0;
+  box-shadow: 1px 1px 3px #ddd;
   margin: 0.5em auto;
-  padding: 0.5em 2em;
+  padding: 0.5em 0;
   color: #586977;
   width: 100%;
   max-width: 640px;
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.droplet-item a,
+.droplet-item a:visited {
+  color: #586977;
+}
+
+.droplet-item a:hover {
+  color: #6da5f9;
 }
 
 .droplet-item.active {
@@ -130,6 +142,17 @@ nav a:hover {
   cursor: pointer;
 }
 
+.droplet-item > * {
+  padding: 0 1em;
+  flex: 1 0;
+}
+
+/* DROPLET INFOS */
+.droplet-item .infos {
+  flex: 2 0;
+}
+
+/* DROPLET NAME AND ID */
 .droplet-item .name {
   font-size: 24px;
 }
@@ -137,4 +160,26 @@ nav a:hover {
 .droplet-item .id {
   font-size: 18px;
   color: #bac6d1;
+}
+
+/* DROPLET SIZE AND DYSTRO */
+.droplet-item .config {
+  font-size: 12px;
+}
+
+.droplet-item .config i {
+  color: #b8b8b8;
+}
+
+/* IP ADDRESS AND LOCATION */
+.droplet-item .network {
+  text-align: center;
+}
+
+.droplet-item .network strong {
+  text-transform: uppercase;
+}
+
+.droplet-item .network a {
+  display: block;
 }

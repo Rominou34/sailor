@@ -16,17 +16,24 @@
     <main>
       <h1 class="text-center">Droplets</h1>
       <div>
-        <a ng-repeat="d in droplets" class="droplet-item {{ d.status}}">
-          <p>
-            <span class="name">{{ d.name }}</span>
-            <span class="id">#{{ d.id }}</span>
-          </p>
-          <p>
-            <span>{{ d.memory }} MB</span>
-            <span>{{ d.vcpus }} vCore(s)</span>
-            <span>{{ d.disk }} GB SSD</span>
-          </p>
-        </a>
+        <div ng-repeat="d in droplets" class="droplet-item {{ d.status}}">
+          <a class="infos" href="#">
+            <p class="details">
+              <strong class="name">{{ d.name }}</strong>
+              <span class="id">#{{ d.id }}</span>
+            </p>
+            <p class="config">
+              <span>{{ d.memory }} MB</span> /
+              <span>{{ d.vcpus }} vCPUs</span> /
+              <span>{{ d.disk }} GB SSD</span> -
+              <i>{{ d.image.distribution }} {{ d.image.name }}</i>
+            </p>
+          </a>
+          <div class="network">
+            <strong>{{ d.region.slug }}</strong>
+            <a href="http://{{ d.networks.v4[0].ip_address }}">{{ d.networks.v4[0].ip_address }}</a>
+          </div>
+        </div>
       </div>
     </main>
 
