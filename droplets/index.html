@@ -6,13 +6,24 @@
     <script src="http://rominou34.github.io/papillon/src/js/papillon.js"></script>
     <script src="http://rominou34.github.io/papillon/src/js/dom.js"></script>
     <script src="http://rominou34.github.io/papillon/src/js/misc.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
   </head>
   <body class="navside">
-    <?php
-      include('components/header.php');
-      include('components/nav.php');
-    ?>
+    <header class="container soft-col stack-sm no-margin">
+      <div class="col-9 no-margin">Sailor</div>
+      <div class="col-3 text-right no-margin" id="user-info">
+        <a class="button success no-margin" href="https://cloud.digitalocean.com/v1/oauth/authorize?response_type=code&client_id=<?php echo(CLIENT_ID)?>&redirect_uri=https://sailor.rominou.moe/oauth">Log In</a>
+      </div>
+    </header>
+    <nav class="side">
+      <div class="toggle"></div>
+      <!-- <div class="header">
+        <h2>Sailor</h2>
+      </div> -->
+      <div class="links">
+        <a href="/droplets">Droplets</a>
+      </div>
+    </nav>
     <main>
       <h1 class="text-center">Droplets</h1>
       <div>
@@ -41,7 +52,7 @@
     console.log(window.location.pathname);
       var app = angular.module('sailor', []);
       app.controller('getDroplets', function($scope, $http) {
-          $http.get("server/droplets.php")
+          $http.get("../server/droplets.php")
           .then(function (response) {$scope.droplets = response.data.droplets;});
       });
     </script>
