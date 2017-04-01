@@ -1,13 +1,13 @@
 <?php
 
 // Fake data so I don't have to request DO servers everytime
-require('data.php');
-echo($droplets);
-die();
+// require('data.php');
+// echo($droplets);
+// die();
 
 session_start();
 
-if(isset($_SESSION["access_token"])) {
+if(isset($_SESSION["do_access_token"])) {
   try {
     $ch = curl_init();
 
