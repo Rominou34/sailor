@@ -2,63 +2,58 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
     <link rel="stylesheet" type="text/css" href="https://rominou34.github.io/papillon/src/min/papillon.min.css">
     <script src="https://rominou34.github.io/papillon/src/js/papillon.js"></script>
     <script src="https://rominou34.github.io/papillon/src/js/dom.js"></script>
     <script src="https://rominou34.github.io/papillon/src/js/misc.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <script src="/sailor/scripts/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="/sailor/assets/style.css">
   </head>
-  <body class="navside">
+  <body class="navside" ng-app="sailor">
     <header class="container soft-col stack-sm no-margin">
       <div class="col-9 no-margin">Sailor</div>
-      <div class="col-3 text-right no-margin" id="user-info" ng-app="sailor" ng-controller="getSessions">
+      <div class="col-3 text-right no-margin" id="user-info" ng-controller="getSessions">
         <a ng-if="sessions.do_login == 0" class="button success no-margin" href="https://cloud.digitalocean.com/v1/oauth/authorize?response_type=code&client_id=8580e580ddf4f61f9891efabcfae5b0cddbef0cd7e7b1fa16e659e28b70edfc8&redirect_uri=https://sailor.rominou.moe/oauth/index.php">Log In</a>
         <span ng-if="sessions.do_login == 1" >Hi</span>
       </div>
     </header>
-    <nav class="side">
+    <nav class="side" ng-controller="routeCtrl">
       <div class="toggle"></div>
       <!-- <div class="header">
         <h2>Sailor</h2>
       </div> -->
       <div class="links">
-        <a href="/droplets">Droplets</a>
+        <a href="" ng-click='navigate("/")'>Home</a>
+        <div class="category">
+          <span>Digital Ocean</span>
+          <a href="" ng-click='navigate("/dig_ocean/droplets")'>Droplets</a>
+          <a href="" ng-click='navigate("/dig_ocean/account")'>Account</a>
+        </div>
+        <a href="" ng-click='navigate("/test")'>Test</a>
       </div>
     </nav>
-    <?php
-      include('components/header.php');
-      include('components/nav.php');
-    ?>
-    <main>
-      <h1 class="text-center">Welcome to Sailor !</h1>
-      <div class="container">
-        <h3>What is this ?</h3>
-        <p>
-          Sailor is a PWA used to monitor and manage your Digital Ocean
-          account and droplets.<br/>
-          It runs using only PHP for the back-end, and creates the front-end using
-          AngularJS ( not Angular 2 ).<br/>
-          It's still in very early development so it doesn't do much for now
-        </p>
-      </div>
-      <div class="container">
-        <h3>What's the point ?</h3>
-        <p>
-          I don't develop this webapp in order to gain fame or anything like that,
-          I'm just doing it in order to learn new things.<br/>
-          In fact, I'm going to use AngularJS to create the front-end of a webapp
-          running on PHP during my internship, so the development of Sailor is
-          going to help me a lot, and that's the main reason behind it.
-        </p>
-      </div>
-    </main>
+    <ng-view></ng-view>
     <script>
-    console.log(window.location.pathname);
-      var app = angular.module('sailor', []);
-      app.controller('getSessions', function($scope, $http) {
-          $http.get("/server/sessions.php")
-          .then(function (response) {$scope.sessions = response.data;});
-      });
+    // console.log(window.location.pathname);
+    //   var app = angular.module('sailor', ["ngRoute"]);
+    //   app.controller('getSessions', function($scope, $http) {
+    //       //$http.get("/server/sessions.php")
+    //       $http.get("/")
+    //       .then(function (response) {$scope.sessions = response.data;});
+    //   });
+    //   app.config(function($routeProvider) {
+    //       $routeProvider
+    //       .when("/sailor/droplets/", {
+    //           templateUrl : "test.html"
+    //       })
+    //       .when("/", {
+    //         template: "Home"
+    //       })
+    //       .otherwise({
+    //           template : "<h1>None</h1><p>Nothing has been selected</p>"
+    //       });
+    //   });
     </script>
   </body>
 </html>
