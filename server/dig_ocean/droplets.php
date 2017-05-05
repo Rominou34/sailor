@@ -3,10 +3,11 @@
 /*
 * Fake data because I can't query DO servers when I'm on LAN
 * Comment this when on production
-*/
+*
 require('../data.php');
 echo($droplets);
 die();
+*/
 
 session_start();
 
