@@ -7,7 +7,7 @@ var app = angular.module('sailor', ["ngRoute"]);
 app
 // Sessions controller
 .controller('getSessions', function($scope, $http) {
-    $http.get("/sailor/server/sessions.php")
+    $http.get("server/sessions.php")
     .then(function (response) {$scope.sessions = response.data;});
 })
 // Route controller
