@@ -1,8 +1,8 @@
-<main ng-controller="getDroplets">
+<main ng-controller="dropletsListCtrl">
   <h1 class="text-center">Droplets</h1>
   <div>
-    <div ng-repeat="d in droplets" class="droplet-item {{ d.status}}">
-      <a class="infos" href="#">
+    <div ng-repeat="d in droplets" class="droplet-item {{ d.status }}">
+      <a class="infos" href="" ng-click="viewDroplet(d.id)">
         <p class="details">
           <strong class="name">{{ d.name }}</strong>
           <span class="id">#{{ d.id }}</span>

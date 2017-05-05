@@ -1,0 +1,26 @@
+<main ng-controller="dropletCtrl">
+  <h1 class="text-center">Droplet details</h1>
+  <div class="container">
+    <div class="soft-col stack-md">
+      <div class="border col-3">{{ droplet.name }}</div>
+      <div class="border col-6">Test<br/>t</div>
+      <div class="border col-3">Test</div>
+    </div>
+    <a class="infos" href="" ng-click="viewDroplet(d.id)">
+      <p class="details">
+        <strong class="name">{{ droplet.name }}</strong>
+        <span class="id">#{{ droplet.id }}</span>
+      </p>
+      <p class="config">
+        <span>{{ droplet.memory }} MB</span> /
+        <span>{{ droplet.vcpus }} vCPUs</span> /
+        <span>{{ droplet.disk }} GB SSD</span> -
+        <i>{{ droplet.image.distribution }} {{ droplet.image.name }}</i>
+      </p>
+    </a>
+    <div class="network">
+      <strong>{{ droplet.region.slug }}</strong>
+      <a href="http://{{ d.networks.v4[0].ip_address }}">{{ droplet.networks.v4[0].ip_address }}</a>
+    </div>
+  </div>
+</main>

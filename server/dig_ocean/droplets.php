@@ -1,7 +1,10 @@
 <?php
 
-// Fake data so I don't have to request DO servers everytime
-require('data.php');
+/*
+* Fake data because I can't query DO servers when I'm on LAN
+* Comment this when on production
+*/
+require('../data.php');
 echo($droplets);
 die();
 
