@@ -23,7 +23,7 @@ if(isset($_SESSION["do_access_token"])) {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Content-Type: application/json',
-        'Authorization: Bearer '.$_SESSION["access_token"]
+        'Authorization: Bearer '.$_SESSION["do_access_token"]
         ));
 
     $content = curl_exec($ch);
